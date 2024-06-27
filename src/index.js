@@ -2,11 +2,13 @@
 require('dotenv').config(); // Charger les variables d'environnement
 const express = require('express');
 const bodyParser = require('body-parser');
-const userRouter = require('./src/router/userRouter');
-const AppDataSource = require('./src/lib/datasource');
-const authMiddleware = require('./src/middleware/authMiddleware');
+const userRouter = require('./router/userRouter');
+
+
+const authMiddleware = require('./middleware/authMiddleware');
 
 const app = express();
+
 app.use(bodyParser.json());
 
 app.use('/users', authMiddleware, userRouter);

@@ -1,5 +1,5 @@
 // src/controller/userController.js
-const userService = require('../service/userService');
+const userService = require('../services/userService');
 
 const getAllUsers = async (req, res) => {
     try {

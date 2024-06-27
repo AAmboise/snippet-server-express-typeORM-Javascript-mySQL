@@ -1,6 +1,6 @@
 // src/middleware/authMiddleware.js
 const jwt = require('jsonwebtoken');
-const userService = require('../service/userService');
+const userService = require('../services/userService');
 
 const authMiddleware = async (req, res, next) => {
     const authHeader = req.headers['authorization'];
