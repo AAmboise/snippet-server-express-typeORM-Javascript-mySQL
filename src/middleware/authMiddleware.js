@@ -1,4 +1,3 @@
-// src/middleware/authMiddleware.js
 const jwt = require('jsonwebtoken');
 const userService = require('../services/userService');
 

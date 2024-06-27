@@ -1,4 +1,3 @@
-// index.js
 require('dotenv').config(); // Charger les variables d'environnement
 const express = require('express');
 const bodyParser = require('body-parser');

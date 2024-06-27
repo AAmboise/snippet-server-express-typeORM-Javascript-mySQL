@@ -1,4 +1,3 @@
-// src/lib/datasource.js
 require('dotenv').config(); // Charger les variables d'environnement
 const { DataSource } = require('typeorm');
 const User = require('../entities/user');

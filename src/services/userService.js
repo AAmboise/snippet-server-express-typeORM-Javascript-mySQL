@@ -1,4 +1,3 @@
-// src/service/userService.js
 const AppDataSource = require('../lib/datasource');
 const User = require('../entities/user');
 const argon2 = require('argon2');

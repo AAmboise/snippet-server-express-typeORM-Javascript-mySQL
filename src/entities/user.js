@@ -1,4 +1,3 @@
-// src/entities/user.js
 const { EntitySchema } = require('typeorm');
 
 module.exports = new EntitySchema({
@@ -20,5 +19,9 @@ module.exports = new EntitySchema({
         password: {
             type: 'varchar',
         },
+        isAdmin: {
+            type: 'bool',
+            default: false
+        }
     },
 });
