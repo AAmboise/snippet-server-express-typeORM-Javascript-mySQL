@@ -50,10 +50,10 @@ const updateUser = async (req, res) => {
 const deleteUser = async (req, res) => {
     try {
         if (req.user.id !== parseInt(req.params.id)) {
-            return res.status(403).json({ message: 'Unauthorized' });
+            await userService.deleteUser(req.params.id);
+            return res.status(204).send();
         }
-        await userService.deleteUser(req.params.id);
-        res.status(204).send();
+        return res.status(403).json({ message: 'Unauthorized' });
     } catch (error) {
         console.log(error)
         res.status(500).json({ message: 'Internal Server Error' });
