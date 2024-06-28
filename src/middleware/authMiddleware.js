@@ -14,12 +14,14 @@ const authMiddleware = async (req, res, next) => {
     }
 
     try {
+
         // On vérifie la validité du token grace a la clé secrète
         const decoded = jwt.verify(token, process.env.JWT_SECRET); 
         // si le token est valide, on récupère le mail contenu dans le payload
         const email = decoded.email;
         // grace au mail récupéré, on récupère les information du user
-        const user = await userService.getUserByEmail(email);
+        user = await userService.getUserByEmail(email);
+        console.log("autheur de la requête: ",user)
         if (user) {
             req.user = user;
         }

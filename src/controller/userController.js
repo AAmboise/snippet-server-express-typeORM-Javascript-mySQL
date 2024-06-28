@@ -54,7 +54,7 @@ const updateUser = async (req, res) => {
 
 const deleteUser = async (req, res) => {
     try {
-        if (req.user.id !== parseInt(req.params.id)) {
+        if (req.user.id == parseInt(req.params.id) || req.user.isAdmin == true) {
             await userService.deleteUser(req.params.id);
             return res.status(204).send();
         }
