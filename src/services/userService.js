@@ -2,6 +2,7 @@ const AppDataSource = require('../lib/datasource');
 const User = require('../entities/user');
 const argon2 = require('argon2');
 
+// On récupère le
 const userRepository = AppDataSource.getRepository(User);
 
 const getAllUsers = async () => {

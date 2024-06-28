@@ -1,7 +1,10 @@
-require('dotenv').config(); // Charger les variables d'environnement
 const { DataSource } = require('typeorm');
 const User = require('../entities/user');
 
+//On charge les variables d'environnement
+require('dotenv').config();
+
+// On configure la connexion à la base de données en y ajoutant les entitées
 const AppDataSource = new DataSource({
     type: 'mysql',
     host: process.env.DB_HOST,
@@ -16,6 +19,7 @@ const AppDataSource = new DataSource({
     subscribers: [],
 });
 
+// On initialise la base de données en utilisant les entités précédement configurées
 AppDataSource.initialize()
     .then(() => {
         console.log('Data Source has been initialized!');
