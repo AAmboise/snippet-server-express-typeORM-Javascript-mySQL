@@ -20,11 +20,10 @@ const authMiddleware = async (req, res, next) => {
         const email = decoded.email;
         // grace au mail récupéré, on récupère les information du user
         const user = await userService.getUserByEmail(email);
-        if (!user) {
-            return res.status(404).json({ message: 'User not found' });
+        if (user) {
+            req.user = user;
         }
         // on ajoute dans la requête l'information du user
-        req.user = user;
         next();
     } catch (error) {
         return res.status(403).json({ message: 'Invalid Access Token' });
